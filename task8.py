@@ -1,4 +1,13 @@
-infile = open("sample.log","r")
+import argparse
+
+parser = argparse.ArgumentParser(description='Looking for top ips in log file.')
+parser.add_argument("log_path", type=str, help='an path to log file')
+args = parser.parse_args()
+print (args)
+
+
+
+infile = open(args.log_path,"r")
 iplist = {}
 
 for line in infile:
